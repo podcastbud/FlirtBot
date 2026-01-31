@@ -1,0 +1,62 @@
+{
+    "name": "provide_flirt_options",
+    "description": "Generate structured flirtatious reply options based on the conversation context and user profile.",
+    "strict": true,
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "match_name": {
+                "type": "string",
+                "description": "The name of the person we are talking to, extracted from the image header if possible. Default to 'Unknown' if not visible."
+            },
+            "confidence_score": {
+                "type": "number",
+                "description": "Confidence score of the vibe read from 1-10."
+            },
+            "vibe_read": {
+                "type": "string",
+                "description": "A 1-2 sentence assessment of the current vibe and the match's interest level."
+            },
+            "draft_replies": {
+                "type": "array",
+                "description": "List of reply options categorized by flavor.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "option_number": { "type": "number" },
+                        "category": { 
+                            "type": "string", 
+                            "enum": ["Playful/Witty", "Bold/Direct", "Soft/Warm", "Intriguing/Mysterious", "Ghost-Busting"]
+                        },
+                        "content": { "type": "string" },
+                        "explanation": { "type": "string", "description": "Why this reply works for this specific vibe." }
+                    },
+                    "required": ["option_number", "category", "content", "explanation"],
+                    "additionalProperties": false
+                }
+            },
+            "follow_up_question": {
+                "type": "string",
+                "description": "A high-quality open-ended question to keep the momentum going if the conversation stalls."
+            },
+            "if_they_go_quiet_message": {
+                "type": "string",
+                "description": "A low-pressure 're-ping' message to use if they don't reply within 24-48 hours."
+            },
+            "thing_to_avoid_next": {
+                "type": "string",
+                "description": "Critically analyze common pitfalls in this specific context and identify one thing the user should NOT do next."
+            }
+        },
+        "required": [
+            "match_name",
+            "confidence_score",
+            "vibe_read",
+            "draft_replies",
+            "follow_up_question",
+            "if_they_go_quiet_message",
+            "thing_to_avoid_next"
+        ],
+        "additionalProperties": false
+    }
+}
