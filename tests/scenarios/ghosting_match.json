@@ -1,0 +1,13 @@
+{
+    "scenario_name": "Ghosting Recovery",
+    "description": "Re-engaging a match who stopped responding.",
+    "vibe": "Intriguing/Mysterious",
+    "turns": [
+        {
+            "user_context": "Last message sent: 'How was your weekend?' (No reply for 3 days)",
+            "vibe": "Intriguing/Mysterious",
+            "description": "Send a low-pressure recovery message",
+            "expected_results": ["low pressure", "re-engaging"]
+        }
+    ]
+}

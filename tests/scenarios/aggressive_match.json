@@ -1,0 +1,13 @@
+{
+    "scenario_name": "Aggressive Match",
+    "description": "Handling a match who is overly bold or aggressive.",
+    "vibe": "Playful/Witty",
+    "turns": [
+        {
+            "user_context": "Match: 'You look better in person'",
+            "vibe": "Playful/Witty",
+            "description": "Deflect a backhanded compliment with wit",
+            "expected_results": ["witty", "confident"]
+        }
+    ]
+}

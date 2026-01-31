@@ -1,0 +1,19 @@
+{
+    "scenario_name": "Shy Match",
+    "description": "Handling a match who gives short, shy answers.",
+    "vibe": "Soft/Warm",
+    "turns": [
+        {
+            "user_context": "Match just said: 'Haha yeah it was fun'",
+            "vibe": "Soft/Warm",
+            "description": "Respond to a short answer with a warm, open-ended question",
+            "expected_results": ["encouraging", "open-ended"]
+        },
+        {
+            "user_context": "Match: 'I'm just a bit nervous'",
+            "vibe": "Soft/Warm",
+            "description": "Reassure them and keep the vibe cozy",
+            "expected_results": ["reassuring", "warm"]
+        }
+    ]
+}
